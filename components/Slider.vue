@@ -18,6 +18,12 @@
 <script>
 
 export default {
+	name: "Slider",
+  	data() {
+    	return {
+      		name: ""
+    	};
+  	},
 	props: {
 		slide: {
 			type: Object,

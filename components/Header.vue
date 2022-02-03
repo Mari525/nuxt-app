@@ -29,6 +29,11 @@
 
 <script>
 export default {
-
+  name: "Header",
+  data() {
+    return {
+      name: ""
+    };
+  }
 }
 </script>

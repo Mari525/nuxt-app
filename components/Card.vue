@@ -1,14 +1,12 @@
 <template>
-	<v-col>
-		<v-card @click.prevent="openArticle(card)">
+	<v-col class="d-flex align-stretch">
+		<v-card @click.prevent="openArticle(card)" width="250">
 			<v-card-title>
-				{{ card.name }}
+				{{ card.title }}
 			</v-card-title>
 			<v-card-text>
 				<Photo v-for="photo in photos" :key="photo.id" :photo="photo"></Photo>
-			</v-card-text>
-			<v-card-text>
-				{{ card.shortDesc }}
+				<!-- <v-img :src"returnSource()" /> -->
 			</v-card-text>
 		</v-card>
 	</v-col>
@@ -36,7 +34,7 @@ export default {
 	methods: {
 		openArticle(card) {
 			this.$router.push('/news/' + card.id)
-		} 
+		}
 	}
 }
 </script>

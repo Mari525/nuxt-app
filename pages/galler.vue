@@ -16,8 +16,12 @@ export default {
 	data: () => ({
 		photos: []
 	}),
-	async mounted() {
-		this.photos = await this.$axios.$get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+	// async mounted() {
+	// 	this.photos = await this.$axios.$get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+	// }
+	async asyncData({ $axios }) {
+  		const photos = await $axios.$get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+  		return { photos }
 	}
 }
 </script>
