@@ -1,6 +1,6 @@
 <template>
 	<v-col class="d-flex align-stretch">
-		<v-card @click.prevent="openArticle(card)" width="250">
+		<v-card @click.prevent="openArticle(card)" width="250" class="d-flex flex-column justify-md-space-between">
 			<v-card-title>
 				{{ card.title }}
 			</v-card-title>
