@@ -8,25 +8,32 @@
 
 <script>
 import Card from '@/components/Card'
-// import axios from 'axios'
+import Photo from '@/components/Photo'
 
 export default {
 	components: {
-		Card
+		Card,
+		Photo
 	},
 	data: () => ({
-		cardsList: []
-		// photos: []
+		cardsList: [],
+		photos: []
 	}),
-	// async asyncData( {$axios} ) {
-		// const cardsList = await this.$axios.$get('https://jsonplaceholder.typicode.com/posts')
-		// return {cardsList}
-		// this.photos = await this.$axios.$get('https://jsonplaceholder.typicode.com/photos?_limit=1')
-	// }
 	async asyncData({ $axios }) {
-  		const cardsList = await $axios.$get('https://jsonplaceholder.typicode.com/posts/')
+  		const cardsList = await $axios.$get('https://demo-api.vsdev.space/api/articles')
   		return { cardsList }
 	}
+	// async asyncData ({ $axios, params }) {
+	// 	const [photosRes] = await Promise.all([ 
+	// 		$axios.get('https://jsonplaceholder.typicode.com/posts/'),
+	// 		$axios.get('https://jsonplaceholder.typicode.com/photos/')
+	// 	])
+
+	// 	return {
+    // 		cardsList: cardsListRes.data,
+    // 		photos: photosRes.data
+  	// 	}
+	// }
 }
 
 </script>
